@@ -206,6 +206,20 @@ If you try running the emulator at this stage, it will fail because it's missing
 	libmd.so.0 => /lib/i386-linux-gnu/libmd.so.0 (0xf70d5000)
 ```
 
+If you're on Ubuntu or Debian, make sure your system is configured to install i386 packages by adding the corresponding package sources:
+```
+~/j2me$ sudo dpkg --add-architecture i386
+~/j2me$ sudo apt update
+Hit:1 http://archive.ubuntu.com/ubuntu oracular InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu oracular-security InRelease
+Get:3 http://archive.ubuntu.com/ubuntu oracular/main i386 Packages [1064 kB]
+Get:4 http://archive.ubuntu.com/ubuntu oracular/universe i386 Packages [8526 kB]
+Get:5 http://archive.ubuntu.com/ubuntu oracular-security/main i386 Packages [103 kB]
+Get:6 http://archive.ubuntu.com/ubuntu oracular-security/universe i386 Packages [49.7 kB]
+Fetched 9743 kB in 1s (6932 kB/s)
+11 packages can be upgraded. Run 'apt list --upgradable' to see them.
+```
+
 If you're on Debian or Ubuntu, you can find which packages include the missing libraries using `apt-file`.
 ```
 ~/j2me$ apt-file search libXt.so.6
