@@ -66,12 +66,22 @@ jdk1.8.0_202  jdk-8u202-linux-i586.tar.gz  sdk
 
 ## 4. Install and run IntelliJ IDEA Community Edition 2019.3.
 
-We're going to install this through snap, so [make sure that's installed](https://snapcraft.io/docs/installing-snapd). On Debian, do `sudo apt install snapd` first. 
+### Using snap
+
+[Make sure that snap's installed](https://snapcraft.io/docs/installing-snapd). On Debian, do `sudo apt install snapd` first. 
 
 ```
 ~/j2me$ sudo snap install intellij-idea-community --channel=2019.3/stable --classic
 intellij-idea-community (2019.3/stable) 2019.3.5 from jetbrains✓ installed
 ~/j2me$ snap run intellij-idea-community
+```
+
+### Using an unofficial public archive
+
+```
+~/j2me$ wget https://github.com/mmk2410/intellij-idea-community/raw/bb2c011025c423d4c971fb19ef8fde6c4027d4bd/intellij-idea-community_2019.3.4-1_all.deb
+~/j2me$ sudo apt update && sudo apt install ./intellij-idea-community_2019.3.4-1_all.deb
+~/j2me$ intellij-idea-community
 ```
 
 ## 5. Install Intellij Plugins
